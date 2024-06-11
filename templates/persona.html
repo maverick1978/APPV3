@@ -8,11 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Módulo Persona</h1>
-        <button onclick="openPopup('popup_resume')">Crear Hoja de Vida</button>
-        <button onclick="window.location.href='/'">Cerrar Sesión</button>
+        <header>
+            <h1>Módulo Persona</h1>
+        </header>
+        <nav>
+            <button onclick="openPopup('popup_resume')">Crear Hoja de Vida</button>
+            <button onclick="window.location.href='/'">Cerrar Sesión</button>
+        </nav>
+        {% include 'components/popup_resume.html' %}
     </div>
-    {% include 'components/popup_resume.html' %}
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

@@ -10,17 +10,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenida Empresa: {{ empresa['nombre'] }}</h1>
-        <button onclick="openPopup('popup_vacancy')">Registrar Vacante</button>
-        <button onclick="window.location.href='/'">Cerrar Sesión</button>
-    
-    <h2>Vacantes Disponibles</h2>
-    <ul>
-        {% for vacante in empresa.vacantes %}
-            <li>{{ vacante.nombre }} - {{ vacante.descripcion }} - {{ vacante.salario }} - {{ vacante.fecha_publicacion }}</li>
-        {% endfor %}
-    </ul>
-        {% include 'components/popup_vacancy.html' %}.
-        <script src="/static/js/main.js"></script>
+        <header>
+            <h1>Bienvenida Empresa: {{ empresa['nombre'] }}</h1>
+        </header>
+        <nav>
+            <button onclick="openPopup('popup_vacancy')">Registrar Vacante</button>
+            <button onclick="window.location.href='/'">Cerrar Sesión</button>
+        </nav>
+        <main>
+            <h2>Vacantes Disponibles</h2>
+            <ul>
+                {% for vacante in empresa.vacantes %}
+                    <li>{{ vacante.nombre }} - {{ vacante.descripcion }} - {{ vacante.salario }} - {{ vacante.fecha_publicacion }}</li>
+                {% endfor %}
+            </ul>
+            <!-- Agregar más contenido aquí -->
+            <p>Otro contenido interesante...</p>
+            <p>Más contenido...</p>
+            <p>Y más...</p>
+            <!-- Fin del contenido adicional -->
+        </main>
+        {% include 'components/popup_vacancy.html' %}
+    </div>
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
