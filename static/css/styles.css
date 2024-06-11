@@ -1,20 +1,24 @@
+/* CSS */
 .popup {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 1;
-    left: auto;
-    top: auto;
+    left: 40%;
+    top: 0%; /* Ajustado para mostrar el popup en la parte superior */
+    transform: translateX(-50%);
     width: auto;
     height: auto;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.4);
     justify-content: center;
     align-items: center;
-    transform: translate(50%, -100%);
-    padding: 20px;*/
+    padding: 20px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    cursor: move;
 }
+
+
 /* Estilos para el popup independiente */
 .independent-popup {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
@@ -29,10 +33,6 @@
 .independent-popup .close {
     color: #ff5722; /* Color del botón de cierre naranja */
 }
-
-/* Otros estilos para el popup independiente */
-/* Ajusta los estilos según sea necesario */
-
 
 .popup-content {
     background-color: white;
@@ -135,6 +135,7 @@ button:hover {
 button[type="button"] {
     background-color: #f44336;
 }
+
 button[type="button"]:hover {
     background-color: #d32f2f;
 }
@@ -175,22 +176,17 @@ form {
 .form-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: space-around;
 }
+
 label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 input, select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -212,29 +208,162 @@ textarea {
     resize: vertical;
 }
 
-
 .form-actions {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     margin-top: 20px;
 }
-/* Estilos específicos para el popup de crear hoja de vida */
 
+/* Estilos específicos para el popup de crear hoja de vida */
 #popup_resume {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-    border: 2px solid #ff5722; /* Borde naranja */
-    border-radius: 10px;
-    transform: translate(50%, -60%);
+    display: none;
+    position: fixed; /* Cambiado a fixed para que se mueva libremente */
+    z-index: 1;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    cursor: move; /* Cursor que indica que es arrastrable */
 }
 
 #popup_resume .popup-content {
+    background-color: white;
     padding: 20px;
 }
 
 #popup_resume .close {
-    color: #ff5722; /* Color del botón de cierre naranja */
+    color: #aaa; /* Color del botón de cierre gris */
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#popup_resume .close:hover,
+#popup_resume .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-/* Otros estilos específicos para este popup */
-/* Ajusta los estilos según sea necesario */
+/* Ajustes de posición y estilo específicos */
+#popup_vacancy {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    border: 0px;  /* Borde naranja */
+    border-radius: 10px;
+    transform: translate(0%, 0%);
+    cursor: auto; /* Cursor que indica que es arrastrable */
+}
+
+#popup_vacancy .popup-content {
+    padding: 20px;
+}
+
+#popup_vacancy .close {
+    color: #ff5722; /* Color del botón de cierre naranja */
+}
+/* styles.css */
+.popup-content form {
+    max-width: 400px; /* Ajusta el ancho máximo del formulario */
+}
+
+.popup-content .form-group {
+    margin-bottom: 20px; /* Añade espacio entre cada grupo de campo */
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content input[type="date"],
+.popup-content textarea {
+    width: 100%; /* Haz que los campos de texto y área de texto ocupen todo el ancho disponible */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.popup-content textarea {
+    height: 100px; /* Ajusta la altura del área de texto */
+}
+
+.popup-content .form-actions {
+    margin-top: 20px; /* Añade espacio sobre los botones */
+}
+
+.popup-content .form-actions button {
+    margin-right: 10px; /* Añade espacio entre los botones */
+    padding: 10px 20px; /* Ajusta el tamaño de los botones */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup-content .form-actions button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.popup-content .form-actions button[type="button"] {
+    background-color: #bbb;
+    color: black;
+}
+/* styles.css */
+.popup-content form {
+    max-width: 400px; /* Ajusta el ancho máximo del formulario */
+}
+
+.popup-content .form-group {
+    margin-bottom: 20px; /* Añade espacio entre cada grupo de campo */
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content input[type="date"],
+.popup-content textarea {
+    width: 100%; /* Haz que los campos de texto y área de texto ocupen todo el ancho disponible */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.popup-content textarea {
+    height: 100px; /* Ajusta la altura del área de texto */
+}
+
+.popup-content .form-actions {
+    margin-top: 20px; /* Añade espacio sobre los botones */
+}
+
+.popup-content .form-actions button {
+    margin-right: 10px; /* Añade espacio entre los botones */
+    padding: 10px 20px; /* Ajusta el tamaño de los botones */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup-content .form-actions button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.popup-content .form-actions button[type="button"] {
+    background-color: #bbb;
+    color: black;
+}
