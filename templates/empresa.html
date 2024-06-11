@@ -1,0 +1,26 @@
+<!-- empresa.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Empresa</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenida Empresa: {{ empresa['nombre'] }}</h1>
+        <button onclick="openPopup('popup_vacancy')">Registrar Vacante</button>
+        <button onclick="window.location.href='/'">Cerrar Sesión</button>
+    
+    <h2>Vacantes Disponibles</h2>
+    <ul>
+        {% for vacante in empresa.vacantes %}
+            <li>{{ vacante.nombre }} - {{ vacante.descripcion }} - {{ vacante.salario }} - {{ vacante.fecha_publicacion }}</li>
+        {% endfor %}
+    </ul>
+        {% include 'components/popup_vacancy.html' %}.
+        <script src="/static/js/main.js"></script>
+</body>
+</html>

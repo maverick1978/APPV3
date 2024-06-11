@@ -1,0 +1,25 @@
+<!-- popup_register.html -->
+<div id="popup_register" class="popup">
+    <div class="popup-content">
+        <form id="form_register" action="/register_empresa" method="POST">
+            <h2>Registro de Empresa</h2>
+            <label for="nombre">Nombre Empresa:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="representante">Representante Legal:</label>
+            <input type="text" id="representante" name="representante" required>
+            
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" required>
+            
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="closePopup('popup_register')">Cancelar</button>
+        </form>
+    </div>
+</div>
